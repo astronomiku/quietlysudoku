@@ -3,87 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Quietly: Sudoku — thoughtful puzzles, helpful hints, and no ads.">
-  <title>Quietly: Sudoku</title>
+  <title>Quietly: Sudoku — calm puzzles, thoughtful hints</title>
+  <meta name="description" content="A calm Sudoku for iPhone, iPad and Mac. Five levels, daily puzzles, hints that teach the next step, and no ads.">
+  <meta name="theme-color" content="#F4F4F3">
+  <meta property="og:title" content="Quietly: Sudoku">
+  <meta property="og:description" content="Calm puzzles, thoughtful hints. No ads, no accounts, no noise.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/gameplay.jpg">
   <link rel="icon" href="assets/quietly-mark.png">
+  <link rel="apple-touch-icon" href="assets/quietly-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Roboto:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="phone-gallery.css">
 </head>
 <body>
-  <nav class="shell">
+  <nav class="shell" aria-label="Main">
     <a class="brand" href="./"><img src="assets/quietly-mark.png" alt=""><span>Quietly: Sudoku</span></a>
-    <div><a href="support/">Support</a><a href="privacy/">Privacy</a></div>
+    <div><a class="nav-how" href="#how">How it plays</a><a href="support/">Support</a><a href="privacy/">Privacy</a></div>
   </nav>
 
   <main>
     <header class="hero shell">
-      <p class="eyebrow">NO ADS. NO NOISE.</p>
-      <h1>Sudoku,<br><em>quietly.</em></h1>
-      <p class="intro">Thoughtful puzzles, hints that teach, and a calm place to solve—online or off.</p>
-      <div class="pills"><span>Five levels</span><span>Daily puzzles</span><span>Plays offline</span></div>
+      <div>
+        <p class="eyebrow">For iPhone, iPad &amp; Mac</p>
+        <h1>Sudoku,<br><em>quietly.</em></h1>
+        <p class="lede">A clean board, hints that teach the next step instead of giving it away, and nothing else asking for your attention.</p>
+        <ul class="pills" aria-label="Highlights">
+          <li>No ads</li><li>No account</li><li>Five levels</li><li>Daily puzzles</li><li>Plays offline</li>
+        </ul>
+        <a class="soon" href="#how">Coming soon to the App Store <small>See how it plays ↓</small></a>
+      </div>
+
+      <figure class="board-wrap">
+        <div class="board" id="board" role="group" aria-label="Sample Sudoku board in the Classic theme. Select a cell to see its row, column and box."></div>
+        <figcaption>
+          <span class="key"><i class="k-given"></i>Given</span>
+          <span class="key"><i class="k-entry"></i>Yours</span>
+          <span class="key"><i class="k-err"></i>Wrong</span>
+          <span class="key"><i class="k-peer"></i>Row, column &amp; box</span>
+        </figcaption>
+      </figure>
     </header>
 
-    <section class="promise shell">
-      <p class="eyebrow">JUST THE PUZZLE</p>
-      <h2>No ads.<br>No tracking.<br>No interruptions.</h2>
-      <p>Play at your own pace. Quietly keeps the board clear and your attention where it belongs.</p>
+    <section class="section shell" id="how" aria-labelledby="how-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">How it plays</p><h2 id="how-title">Simple rules.<br><em>Fair ones.</em></h2></div>
+        <p>You compete only against your own records. There are no leaderboards, no sign-in and no pause button, so every best time is a real one.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Earn your way up</h3><p>Easy and Medium are open from the start. Solve three puzzles at a level to unlock the next: Hard, then Expert, then Master.</p></li>
+        <li><h3>Lives and hints</h3><p>You start with five of each, shared across every level. Lives come back one every 20 minutes and hints one every hour, up to three of each.</p></li>
+        <li><h3>Resets when you need them</h3><p>A reset adds three lives and three hints, clears your wrong numbers and keeps your correct work. You start with two.</p></li>
+        <li><h3>Pencil &amp; paper daily</h3><p>Each unlocked level has a fresh daily puzzle with no lives, hints or score. Just you and the grid.</p></li>
+      </ol>
     </section>
 
-    <section class="feature-section shell" aria-labelledby="features-title">
-      <div class="section-heading">
-        <p class="eyebrow">FEATURES</p>
-        <h2 id="features-title">Everything you need.<br>Nothing you don’t.</h2>
+    <section class="section shell" aria-labelledby="features-title">
+      <div class="section-heading solo">
+        <div><p class="eyebrow">Features</p><h2 id="features-title">Everything you need.<br><em>Nothing you don’t.</em></h2></div>
       </div>
       <div class="feature-grid">
-        <article><span>01</span><h3>No ads, ever</h3><p>No banners, pop-ups, or video interruptions. Optional extras never change that.</p></article>
-        <article><span>02</span><h3>Five difficulty levels</h3><p>Progress naturally from Easy through Medium, Hard, Expert, and Master.</p></article>
-        <article><span>03</span><h3>Hints that teach</h3><p>Step-by-step clues point toward the deduction without immediately giving away the answer.</p></article>
-        <article><span>04</span><h3>Daily Pencil &amp; Paper</h3><p>Fresh daily puzzles with no lives, hints, scores, or rewards—just the puzzle.</p></article>
-        <article><span>05</span><h3>Play your way</h3><p>Notes, undo, larger numbers, left-handed controls, sounds, and six board themes.</p></article>
-        <article><span>06</span><h3>Private progress</h3><p>Play offline. Keep progress on your device or sync privately with iCloud when enabled.</p></article>
+        <article><span class="glyph" aria-hidden="true">?</span><h3>Hints that teach</h3><p>Step-by-step clues point you to the deduction first, so you learn the technique instead of copying the answer.</p></article>
+        <article><span class="glyph" aria-hidden="true">5</span><h3>Graded by logic</h3><p>Puzzles are graded by the techniques it takes to solve them, not by how many clues they show.</p></article>
+        <article><span class="glyph" aria-hidden="true">✎</span><h3>Your notes, your work</h3><p>Pencil marks are never filled in for you. The solving stays yours.</p></article>
+        <article><span class="glyph" aria-hidden="true">↺</span><h3>Records, not rankings</h3><p>Best scores, best times and clean streaks, measured only against yourself.</p></article>
+        <article><span class="glyph" aria-hidden="true">Aa</span><h3>Play your way</h3><p>Six calm board themes including a low-glare dark one, larger numbers, left-handed controls and sound you can switch off.</p></article>
+        <article><span class="glyph" aria-hidden="true">☁</span><h3>Private by default</h3><p>Plays offline with no account. If you use iCloud, your progress syncs through your own private iCloud storage.</p></article>
       </div>
     </section>
 
-    <section class="requirements shell" aria-labelledby="requirements-title">
-      <div><p class="eyebrow">REQUIREMENTS</p><h2 id="requirements-title">Made for Apple devices.</h2></div>
-      <ul>
-        <li><strong>Devices</strong><span>iPhone, iPad, and Mac</span></li>
-        <li><strong>Internet</strong><span>Not required for normal play</span></li>
-        <li><strong>Account</strong><span>No account required</span></li>
-        <li><strong>iCloud</strong><span>Optional for syncing progress and purchases</span></li>
-      </ul>
-    </section>
+    <section class="section shell" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">iPhone · iPad · Mac</p><h2 id="gallery-title">One app.<br><em>Every screen.</em></h2></div>
+        <p>The full, uncropped app on each device.</p>
+      </div>
 
-    <section class="gallery shell" aria-labelledby="gallery-title">
-      <div class="gallery-heading"><div><p class="eyebrow">IPHONE · IPAD · MAC</p><h2 id="gallery-title">One app.<br>Every screen.</h2></div><p>Browse the complete, uncropped interface on iPhone, iPad, and Mac.</p></div>
-
-      <div class="carousel" aria-roledescription="carousel" aria-label="Quietly Sudoku screenshots">
-        <div class="carousel-tabs" aria-label="Choose a device">
+      <div class="carousel" aria-roledescription="carousel" aria-label="Quietly: Sudoku screenshots" tabindex="0">
+        <div class="carousel-tabs" role="group" aria-label="Choose a device">
           <button class="active" type="button" data-platform="iPhone">iPhone</button>
           <button type="button" data-platform="iPad">iPad</button>
           <button type="button" data-platform="Mac">Mac</button>
         </div>
-
         <div class="carousel-stage">
           <button class="carousel-arrow previous" type="button" aria-label="Previous screenshot">←</button>
           <figure>
-            <div class="carousel-image"><img src="assets/screenshots/iphone-home.png" alt="Quietly Sudoku home screen on iPhone showing five difficulty levels"></div>
-            <figcaption><span class="carousel-platform">iPhone</span><strong class="carousel-title">Five levels with clear progression</strong><small class="carousel-count">1 / 6</small></figcaption>
+            <div class="carousel-image"><img src="assets/screenshots/iphone-home.png" alt="Quietly: Sudoku home screen on iPhone showing five difficulty levels"></div>
+            <figcaption><span class="carousel-platform">iPhone</span><strong class="carousel-title">Five levels with clear progression</strong><small class="carousel-count" aria-live="polite">1 / 6</small></figcaption>
           </figure>
           <button class="carousel-arrow next" type="button" aria-label="Next screenshot">→</button>
         </div>
-
         <div class="carousel-dots" role="group" aria-label="Choose a screenshot"></div>
       </div>
     </section>
 
+    <section class="section shell requirements" aria-labelledby="requirements-title">
+      <div><p class="eyebrow">Requirements</p><h2 id="requirements-title">Made for<br><em>Apple devices.</em></h2></div>
+      <ul>
+        <li><strong>iPhone</strong><span>iOS 18 or later</span></li>
+        <li><strong>iPad</strong><span>iPadOS 18 or later</span></li>
+        <li><strong>Mac</strong><span>macOS 15 or later</span></li>
+        <li><strong>Internet</strong><span>Not needed to play</span></li>
+        <li><strong>Account</strong><span>None</span></li>
+        <li><strong>Price</strong><span>Free, with optional reset packs. No ads, ever.</span></li>
+      </ul>
+    </section>
+
     <section class="closing shell">
-      <img src="assets/quietly-mark.png" alt="Quietly Sudoku app icon">
-      <div><p class="eyebrow">COMING TO THE APP STORE</p><h2>Give every puzzle<br>room to breathe.</h2></div>
+      <img src="assets/quietly-mark.png" alt="Quietly: Sudoku app icon">
+      <div>
+        <p class="eyebrow">Coming soon to the App Store</p>
+        <h2>Give every puzzle<br><em>room to breathe.</em></h2>
+        <p>Questions before launch? <a href="support/">Get in touch</a>.</p>
+      </div>
     </section>
   </main>
 
   <footer class="shell"><span>© 2026 Michiko Yamamoto</span><div><a href="support/">Support</a><a href="privacy/">Privacy Policy</a></div></footer>
+  <script src="board.js"></script>
   <script src="carousel.js"></script>
 </body>
 </html>
