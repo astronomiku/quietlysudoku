@@ -23,7 +23,8 @@ nav div a,footer a{color:var(--muted);text-decoration:none;font-weight:500}
 nav div a:hover,nav div a[aria-current],footer a:hover{color:var(--ink)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700;letter-spacing:-.01em}
 .brand img{width:34px;height:34px;border-radius:8px;background:#fff;border:1px solid var(--border)}
-footer{display:flex;justify-content:space-between;padding:30px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+footer a{display:inline-block;padding:10px 0}
+footer{display:flex;justify-content:space-between;align-items:center;padding:20px 0 34px;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
 
 /* Type */
 .eyebrow{margin:0 0 16px;color:var(--muted);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
@@ -41,9 +42,8 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 .hero h1{margin:0;font-size:clamp(3.2rem,7.4vw,5.8rem);line-height:.96}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;padding:0;list-style:none}
 .pills li{border:1px solid var(--thin);border-radius:999px;padding:7px 14px;background:var(--surface);font-weight:500;font-size:.88rem}
-.soon{display:inline-flex;align-items:center;gap:10px;margin-top:34px;padding:13px 20px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none}
-.soon:hover{background:var(--ink)}
-.soon small{font-weight:400;opacity:.75}
+.soon{display:inline-flex;align-items:center;gap:10px;margin:34px 0 0;padding:10px 16px;border:1px solid var(--thin);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:500;font-size:.92rem}
+.soon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
 
 /* Live board (mirrors the in-app Classic board) */
 .board-wrap{margin:0}
@@ -139,17 +139,23 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
   nav{height:64px}
   nav div{gap:18px}
   nav .nav-how{display:none}
-  .soon small{display:none}
+  nav div a{padding:10px 0}
   .brand span{font-size:.95rem;white-space:nowrap}
   .section{padding:72px 0}
   .steps,.feature-grid{grid-template-columns:1fr}
+  .feature-grid article{display:grid;grid-template-columns:40px 1fr;gap:4px 16px;padding:22px 20px}
+  .feature-grid .glyph{grid-row:span 2;margin:0}
+  .feature-grid h3{margin:8px 0 2px}
   .steps li,.steps li+li{padding:22px 0;border-left:0}
   .steps li+li{border-top:1px solid var(--border)}
   .carousel{padding:12px;border-radius:18px}
-  .carousel-stage{grid-template-columns:38px minmax(0,1fr) 38px;gap:6px}
-  .carousel-arrow{width:38px;height:38px}
-  .carousel-image{min-height:420px;padding:10px}
-  .carousel-image img{max-height:600px}
+  .carousel-stage{grid-template-columns:1fr 1fr;gap:14px 0}
+  .carousel-stage figure{grid-column:1/-1;order:-1}
+  .carousel-arrow.next{justify-self:end}
+  .carousel-arrow{width:44px;height:44px}
+  .carousel-image{min-height:0;padding:8px}
+  .carousel-image img{max-height:68vh}
+  .carousel-tabs button{padding:10px 18px}
   .carousel-stage figcaption{grid-template-columns:1fr auto;gap:8px}
   .carousel-platform{grid-column:1/-1;width:max-content}
   .requirements li{grid-template-columns:100px 1fr}
