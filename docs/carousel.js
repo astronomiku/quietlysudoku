@@ -1,20 +1,20 @@
 const screenshots = {
   iPhone: [
-    ["assets/screenshots/iphone-ios-game.jpg", "Focused play with clear feedback", "Quietly Sudoku game board on iPhone with teal entries and a clearly marked mistake"],
-    ["assets/screenshots/iphone-ios-hint.jpg", "Hints that teach the next step", "Quietly Sudoku progressive three-step hint on iPhone"],
-    ["assets/screenshots/iphone-ios-daily-puzzles.jpg", "A fresh puzzle every day", "Quietly Sudoku daily puzzle picker on iPhone"],
-    ["assets/screenshots/iphone-ios-settings.jpg", "Six calm board themes", "Quietly Sudoku themes and settings on iPhone"],
-    ["assets/screenshots/iphone-ios-lives-and-hints.jpg", "Lives and hints, explained clearly", "Quietly Sudoku onboarding screen explaining lives, hints, and mistakes on iPhone"],
-    ["assets/screenshots/iphone-ios-about.jpg", "50,000 checked puzzles. No ads.", "Quietly Sudoku information screen describing checked puzzles, offline play, and iCloud sync on iPhone"]
+    ["assets/screenshots/iphone-ios-game.png", "Focused play with clear feedback", "Quietly Sudoku game board on iPhone with teal entries and a clearly marked mistake"],
+    ["assets/screenshots/iphone-ios-hint.png", "Hints that teach the next step", "Quietly Sudoku progressive three-step hint on iPhone"],
+    ["assets/screenshots/iphone-ios-daily-puzzles.png", "A fresh puzzle every day", "Quietly Sudoku daily puzzle picker on iPhone"],
+    ["assets/screenshots/iphone-ios-settings.png", "Six calm board themes", "Quietly Sudoku themes and settings on iPhone"],
+    ["assets/screenshots/iphone-ios-lives-and-hints.png", "Lives and hints, explained clearly", "Quietly Sudoku onboarding screen explaining lives, hints, and mistakes on iPhone"],
+    ["assets/screenshots/iphone-ios-about.png", "50,000 checked puzzles. No ads.", "Quietly Sudoku information screen describing checked puzzles, offline play, and iCloud sync on iPhone"]
   ],
   iPad: [
-    ["assets/screenshots/ipad-ios-game.jpg", "A spacious board with clear feedback", "Quietly Sudoku game board on iPad with teal entries and a clearly marked mistake"],
-    ["assets/screenshots/ipad-ios-game-with-hint.jpg", "Teaching hints use the extra space", "Quietly Sudoku game board and progressive hint panel on iPad"],
-    ["assets/screenshots/ipad-ios-home.jpg", "Five levels and daily puzzles", "Quietly Sudoku home screen on iPad showing difficulty levels and daily puzzles"],
-    ["assets/screenshots/ipad-ios-settings.jpg", "Six calm board themes", "Quietly Sudoku themes and settings on iPad"],
-    ["assets/screenshots/ipad-ios-about.jpg", "50,000 checked puzzles. No ads.", "Quietly Sudoku information screen describing checked puzzles, offline play, and iCloud sync on iPad"],
-    ["assets/screenshots/ipad-ios-hints-tutorial.jpg", "Clues that teach, one step at a time", "Quietly Sudoku onboarding screen explaining three-step teaching hints on iPad"],
-    ["assets/screenshots/ipad-ios-resets-tutorial.jpg", "Resets keep play moving", "Quietly Sudoku onboarding screen explaining resets, lives, and hints on iPad"]
+    ["assets/screenshots/ipad-ios-game.png", "A spacious board with clear feedback", "Quietly Sudoku game board on iPad with teal entries and a clearly marked mistake"],
+    ["assets/screenshots/ipad-ios-game-with-hint.png", "Teaching hints use the extra space", "Quietly Sudoku game board and progressive hint panel on iPad"],
+    ["assets/screenshots/ipad-ios-home.png", "Five levels and daily puzzles", "Quietly Sudoku home screen on iPad showing difficulty levels and daily puzzles"],
+    ["assets/screenshots/ipad-ios-settings.png", "Six calm board themes", "Quietly Sudoku themes and settings on iPad"],
+    ["assets/screenshots/ipad-ios-about.png", "50,000 checked puzzles. No ads.", "Quietly Sudoku information screen describing checked puzzles, offline play, and iCloud sync on iPad"],
+    ["assets/screenshots/ipad-ios-hints-tutorial.png", "Clues that teach, one step at a time", "Quietly Sudoku onboarding screen explaining three-step teaching hints on iPad"],
+    ["assets/screenshots/ipad-ios-resets-tutorial.png", "Resets keep play moving", "Quietly Sudoku onboarding screen explaining resets, lives, and hints on iPad"]
   ],
   Mac: [
     ["assets/screenshots/mac-home.png", "Five levels, daily puzzles, personal records", "Quietly Sudoku home screen on Mac"],

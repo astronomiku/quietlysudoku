@@ -52,11 +52,11 @@
         <div class="device-stage">
           <button class="device-arrow device-previous" type="button" aria-label="Previous device">←</button>
           <figure class="device iphone" data-device="iPhone">
-            <img src="assets/screenshots/iphone-ios-game.jpg" alt="A complete Sudoku game screen in Quietly: Sudoku on iPhone" width="1206" height="2622" decoding="async">
+            <img src="assets/screenshots/iphone-ios-game.png" alt="A complete Sudoku game screen in Quietly: Sudoku on iPhone" width="644" height="1400" decoding="async">
             <figcaption><strong>iPhone</strong><span>iOS 18 or later</span></figcaption>
           </figure>
           <figure class="device ipad" data-device="iPad" hidden>
-            <img src="assets/screenshots/ipad-ios-game.jpg" alt="A complete Sudoku game screen in Quietly: Sudoku on iPad" width="2752" height="2064" decoding="async">
+            <img src="assets/screenshots/ipad-ios-game.png" alt="A complete Sudoku game screen in Quietly: Sudoku on iPad" width="1400" height="1050" decoding="async">
             <figcaption><strong>iPad</strong><span>iPadOS 18 or later</span></figcaption>
           </figure>
           <figure class="device mac" data-device="Mac" hidden>
@@ -72,6 +72,16 @@
         </div>
       </div>
     </header>
+
+    <section class="section shell showreel" aria-labelledby="showreel-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">In motion</p><h2 id="showreel-title">Eighteen seconds.<br><em>No ads.</em></h2></div>
+        <p>A quick look at the board, the hints and every screen it plays on. Turn the sound on for the full effect.</p>
+      </div>
+      <figure class="showreel-frame">
+        <video id="showreel" src="assets/video/quietly-showreel.mp4" poster="assets/video/quietly-showreel-poster.jpg" width="1920" height="1080" autoplay muted loop playsinline controls preload="metadata" aria-label="Quietly: Sudoku showreel: the board builds itself, a hint solves a cell, and the app appears on Mac, iPad and iPhone"></video>
+      </figure>
+    </section>
 
     <section class="section shell" id="how" aria-labelledby="how-title">
       <div class="section-heading">
@@ -115,7 +125,7 @@
         <div class="carousel-stage">
           <button class="carousel-arrow previous" type="button" aria-label="Previous screenshot">←</button>
           <figure>
-            <div class="carousel-image"><img src="assets/screenshots/iphone-ios-game.jpg" alt="Quietly: Sudoku game board on iPhone with teal entries and a clearly marked mistake" decoding="async"></div>
+            <div class="carousel-image"><img src="assets/screenshots/iphone-ios-game.png" alt="Quietly: Sudoku game board on iPhone with teal entries and a clearly marked mistake" decoding="async"></div>
             <figcaption><span class="carousel-platform">iPhone</span><strong class="carousel-title">Focused play with clear feedback</strong><small class="carousel-count" aria-live="polite">1 / 6</small></figcaption>
           </figure>
           <button class="carousel-arrow next" type="button" aria-label="Next screenshot">→</button>
@@ -148,5 +158,10 @@
 
   <footer class="shell"><span>© 2026 Michiko Yamamoto</span><div><a href="support/">Support</a><a href="privacy/">Privacy Policy</a></div></footer>
   <script src="carousel.js"></script>
+  <script>
+    // Respect reduced-motion: no autoplay, the poster shows until the visitor presses play.
+    (() => { const v = document.getElementById("showreel");
+      if (v && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); } })();
+  </script>
 </body>
 </html>

@@ -181,3 +181,8 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 }
 .soon-note{color:var(--ink);font-weight:500}
 .soon-tag{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--thin);border-radius:999px;font-style:normal;font-size:.72rem;font-weight:500;color:var(--muted);vertical-align:2px}
+
+/* Showreel */
+.showreel-frame{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 30px 60px -36px rgba(28,30,35,.35)}
+.showreel-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#fff}
+@media(max-width:620px){.showreel-frame{border-radius:14px}}
