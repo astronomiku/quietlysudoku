@@ -42,7 +42,11 @@ if (carousel) {
     platformLabel.textContent = platform;
     title.textContent = caption;
     count.textContent = `${index + 1} / ${slides.length}`;
-    tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.platform === platform));
+    tabs.forEach((tab) => {
+      const active = tab.dataset.platform === platform;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-pressed", String(active));
+    });
     dots.replaceChildren(...slides.map((_, dotIndex) => {
       const dot = document.createElement("button");
       dot.type = "button";
