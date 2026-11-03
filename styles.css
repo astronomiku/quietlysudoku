@@ -40,7 +40,9 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 .section-heading.solo{grid-template-columns:1fr}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1fr minmax(0,460px);gap:72px;align-items:center;padding:96px 0 104px}
+.hero{padding:88px 0 96px}
+.hero-copy{display:grid;grid-template-columns:1fr 1fr;gap:28px 72px;align-items:end;margin-bottom:64px}
+.hero-copy .lede{margin-top:0}
 .hero h1{margin:0;font-size:clamp(3.2rem,7.4vw,5.8rem);line-height:.96}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;padding:0;list-style:none}
 .pills li{border:1px solid var(--thin);border-radius:999px;padding:7px 14px;background:var(--surface);font-weight:500;font-size:.88rem}
@@ -128,8 +130,8 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 .policy section>p:first-child{font-size:1.15rem;color:var(--ink)}
 
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:56px;padding:72px 0 80px}
-  .board-wrap{max-width:460px}
+  .hero{padding:64px 0 72px}
+  .hero-copy{grid-template-columns:1fr;margin-bottom:48px}
   .section-heading,.requirements{grid-template-columns:1fr;gap:22px}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps li:nth-child(3){padding-left:0;border-left:0}
@@ -177,3 +179,18 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 @media(max-width:620px){.nav-get{display:none}}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.board button{transition:none}}
+
+/* Hero device screenshots: flex-grow = aspect ratio, so all three share one height */
+.devices{display:flex;align-items:flex-end;gap:clamp(16px,3vw,36px)}
+.device{flex:var(--g) 1 0;min-width:0;margin:0}
+.device img{display:block;width:100%;height:auto;aspect-ratio:var(--ar);filter:drop-shadow(0 18px 28px rgba(28,30,35,.16)) drop-shadow(0 0 1px rgba(28,30,35,.35))}
+.device.ipad img{border-radius:12px}
+.device figcaption{display:flex;flex-direction:column;align-items:center;margin-top:18px;text-align:center;line-height:1.3}
+.device figcaption strong{font-size:1rem}
+.device figcaption span{color:var(--muted);font-size:.84rem}
+@media(max-width:620px){
+  .devices{flex-wrap:wrap;gap:28px 16px}
+  .device.mac{flex-basis:100%}
+}
+.soon-note{color:var(--ink);font-weight:500}
+.soon-tag{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--thin);border-radius:999px;font-style:normal;font-size:.72rem;font-weight:500;color:var(--muted);vertical-align:2px}
