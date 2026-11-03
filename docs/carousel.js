@@ -8,10 +8,8 @@ const screenshots = {
     ["assets/screenshots/iphone-store.png", "Optional extras. No ads, ever.", "Quietly Sudoku optional extras store on iPhone"]
   ],
   iPad: [
-    ["assets/screenshots/ipad-home.png", "Five levels and daily puzzles", "Quietly Sudoku home screen on iPad"],
-    ["assets/screenshots/ipad-game.png", "A spacious board and clear controls", "Quietly Sudoku game board on iPad"],
-    ["assets/screenshots/ipad-hint.png", "Guidance without giving it away", "Quietly Sudoku progressive hint on iPad"],
-    ["assets/screenshots/ipad-settings.png", "Themes and accessible controls", "Quietly Sudoku settings on iPad"]
+    ["assets/screenshots/ipad-game.png", "A spacious board with clear teal entries", "Quietly Sudoku game board on iPad with teal player entries"],
+    ["assets/screenshots/ipad-wrong.png", "Mistakes are clear without being harsh", "Quietly Sudoku game board on iPad showing a red underlined wrong entry on a pale red cell"]
   ],
   Mac: [
     ["assets/screenshots/mac-home.png", "Five levels, daily puzzles, personal records", "Quietly Sudoku home screen on Mac"],
@@ -22,6 +20,49 @@ const screenshots = {
 };
 
 const carousel = document.querySelector(".carousel");
+
+const deviceCarousel = document.querySelector(".device-carousel");
+
+if (deviceCarousel) {
+  const devices = [...deviceCarousel.querySelectorAll(".device")];
+  const dots = [...deviceCarousel.querySelectorAll(".device-dots button")];
+  let deviceIndex = 0;
+  let deviceTouchStart = 0;
+
+  function renderDevice() {
+    devices.forEach((device, index) => { device.hidden = index !== deviceIndex; });
+    dots.forEach((dot, index) => {
+      const active = index === deviceIndex;
+      dot.classList.toggle("active", active);
+      dot.setAttribute("aria-current", String(active));
+    });
+  }
+
+  function moveDevice(direction) {
+    deviceIndex = (deviceIndex + direction + devices.length) % devices.length;
+    renderDevice();
+  }
+
+  dots.forEach((dot, index) => dot.addEventListener("click", () => {
+    deviceIndex = index;
+    renderDevice();
+  }));
+  deviceCarousel.querySelector(".device-previous").addEventListener("click", () => moveDevice(-1));
+  deviceCarousel.querySelector(".device-next").addEventListener("click", () => moveDevice(1));
+  deviceCarousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") moveDevice(-1);
+    if (event.key === "ArrowRight") moveDevice(1);
+  });
+  deviceCarousel.addEventListener("touchstart", (event) => {
+    deviceTouchStart = event.changedTouches[0].clientX;
+  }, { passive: true });
+  deviceCarousel.addEventListener("touchend", (event) => {
+    const distance = event.changedTouches[0].clientX - deviceTouchStart;
+    if (Math.abs(distance) > 45) moveDevice(distance > 0 ? -1 : 1);
+  }, { passive: true });
+
+  renderDevice();
+}
 
 if (carousel) {
   const image = carousel.querySelector(".carousel-image img");

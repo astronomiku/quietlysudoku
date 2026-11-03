@@ -1,11 +1,7 @@
-/* Quietly: Sudoku — site styles in the app's Classic theme (Theme.swift → classic). */
 :root{
   color-scheme:light;
-  /* Matches what the app actually draws for Classic (Theme.swift: shared light
-     palette + Classic accents). Keep the two in sync. */
   --bg:#FFFFFF;--surface:#FFFFFF;--ink:#1C1E23;--muted:#676B73;
-  --thick:#25272D;--thin:#D8DBE1;--peer:#F3F4F6;--same:#E3E3E4;--sel:#D4D4D4;--sel-fg:#2C2C2E;
-  --entry:#007C83;--err:#C9342F;--err-bg:#FBE8E6;--border:#E2E4E8;--soft:#E7E7E8;--accent:#3A3A3C;
+  --thin:#D8DBE1;--border:#E2E4E8;--accent:#3A3A3C;
   --serif:"Noto Serif",Georgia,serif;
   --sans:Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
@@ -48,28 +44,6 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 .pills li{border:1px solid var(--thin);border-radius:999px;padding:7px 14px;background:var(--surface);font-weight:500;font-size:.88rem}
 .soon{display:inline-flex;align-items:center;gap:10px;margin:34px 0 0;padding:10px 16px;border:1px solid var(--thin);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:500;font-size:.92rem}
 .soon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
-
-/* Live board (mirrors the in-app Classic board) */
-.board-wrap{margin:0}
-.board{display:grid;grid-template-columns:repeat(9,1fr);aspect-ratio:1;background:var(--surface);border:3px solid var(--thick);border-radius:4px;box-shadow:0 30px 60px -30px rgba(28,30,35,.35);user-select:none}
-.board button{appearance:none;position:relative;display:grid;place-items:center;min-width:0;padding:0;border:0;border-right:1px solid var(--thin);border-bottom:1px solid var(--thin);background:var(--surface);color:var(--ink);font:400 clamp(1.05rem,3.4vw,1.85rem)/1 var(--serif);cursor:pointer;transition:background-color .15s}
-.board button:nth-child(9n){border-right:0}
-.board button:nth-child(9n+3),.board button:nth-child(9n+6){border-right:2px solid var(--thick)}
-.board button:nth-child(n+19):nth-child(-n+27),.board button:nth-child(n+46):nth-child(-n+54){border-bottom:2px solid var(--thick)}
-.board button:nth-child(n+73){border-bottom:0}
-.board button.peer{background:var(--peer)}
-.board button.same{background:var(--same);font-weight:600}
-.board button.sel{background:var(--sel);color:var(--sel-fg)}
-.board button.entry{color:var(--entry)}
-.board button.err{background:var(--err-bg);color:var(--err);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
-.board button.notes{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);place-items:center;font-size:clamp(.5rem,1.1vw,.68rem);color:var(--muted)}
-.board-wrap figcaption{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px;color:var(--muted);font-size:.84rem}
-.key{display:inline-flex;align-items:center;gap:7px}
-.key i{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid var(--thin)}
-.key .k-given{background:var(--ink);border-color:var(--ink)}
-.key .k-entry{background:var(--entry);border-color:var(--entry)}
-.key .k-err{background:var(--err);border-color:var(--err)}
-.key .k-peer{background:var(--peer)}
 
 /* How it plays */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;counter-reset:step;border-top:2px solid var(--ink)}
@@ -172,25 +146,38 @@ h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-sp
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:34px}
 .closing .cta{margin-top:22px}
 .cta>span{color:var(--muted);font-size:.92rem}
-.store-badge{display:inline-block;line-height:0;border-radius:10px;transition:opacity .15s}
+.store-badge{display:inline-flex;align-items:center;min-width:160px;min-height:52px;padding:7px 16px;border-radius:10px;background:#000;color:#fff;text-decoration:none;line-height:1;transition:opacity .15s}
 .store-badge:hover{opacity:.82}
-.store-badge img{display:block;width:160px;height:auto;min-height:44px}
+.store-badge>span{display:flex;flex-direction:column;gap:2px;font-size:1.08rem;font-weight:500;letter-spacing:-.02em}
+.store-badge small{font-size:.63rem;font-weight:400;letter-spacing:0}
 .nav-get{color:var(--ink)!important;border:1px solid var(--thin);border-radius:999px;padding:4px 14px;margin:-5px 0;background:var(--surface)}
 @media(max-width:620px){.nav-get{display:none}}
 
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.board button{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Hero device screenshots: flex-grow = aspect ratio, so all three share one height */
-.devices{display:flex;align-items:flex-end;gap:clamp(16px,3vw,36px)}
-.device{flex:var(--g) 1 0;min-width:0;margin:0}
-.device img{display:block;width:100%;height:auto;aspect-ratio:var(--ar);filter:drop-shadow(0 18px 28px rgba(28,30,35,.16)) drop-shadow(0 0 1px rgba(28,30,35,.35))}
+.device-carousel{padding:24px;border:1px solid var(--border);border-radius:24px;background:var(--surface)}
+.device-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;min-height:650px}
+.device{display:grid;place-items:center;min-width:0;margin:0}
+.device[hidden]{display:none}
+.device img{display:block;width:auto;height:auto;max-width:100%;max-height:570px;filter:drop-shadow(0 18px 28px rgba(28,30,35,.16)) drop-shadow(0 0 1px rgba(28,30,35,.35))}
 .device.ipad img{border-radius:12px}
 .device figcaption{display:flex;flex-direction:column;align-items:center;margin-top:18px;text-align:center;line-height:1.3}
 .device figcaption strong{font-size:1rem}
 .device figcaption span{color:var(--muted);font-size:.84rem}
+.device-arrow{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--thin);border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.2rem;cursor:pointer;transform:translateY(-50%)}
+.device-previous{left:0}
+.device-next{right:0}
+.device-arrow:hover{border-color:var(--ink)}
+.device-dots{display:flex;justify-content:center;gap:9px;margin-top:18px}
+.device-dots button{width:9px;height:9px;padding:0;border:0;border-radius:999px;background:var(--thin);cursor:pointer}
+.device-dots button.active{width:28px;background:var(--ink)}
 @media(max-width:620px){
-  .devices{flex-wrap:wrap;gap:28px 16px}
-  .device.mac{flex-basis:100%}
+  .device-carousel{padding:14px;border-radius:18px}
+  .device-stage{min-height:540px}
+  .device img{max-height:450px}
+  .device-arrow{width:40px;height:40px}
+  .device-previous{left:2px}
+  .device-next{right:2px}
 }
 .soon-note{color:var(--ink);font-weight:500}
 .soon-tag{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--thin);border-radius:999px;font-style:normal;font-size:.72rem;font-weight:500;color:var(--muted);vertical-align:2px}

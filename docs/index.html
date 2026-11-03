@@ -48,19 +48,28 @@
         </div>
       </div>
 
-      <div class="devices" aria-label="Quietly: Sudoku on each device">
-        <figure class="device mac" style="--ar:2360/1696;--g:1.3915">
-          <img src="assets/screenshots/mac-game.png" alt="Preview of a Sudoku game in Quietly: Sudoku for Mac" width="2360" height="1696" decoding="async">
-          <figcaption><strong>Mac <em class="soon-tag">Coming soon</em></strong><span>macOS 15 or later</span></figcaption>
-        </figure>
-        <figure class="device ipad" style="--ar:1372/1830;--g:0.7497">
-          <img src="assets/screenshots/ipad-game.png" alt="A new Easy puzzle in Quietly: Sudoku on iPad" width="1372" height="1830" decoding="async">
-          <figcaption><strong>iPad</strong><span>iPadOS 18 or later</span></figcaption>
-        </figure>
-        <figure class="device iphone" style="--ar:880/1912;--g:0.4603">
-          <img src="assets/screenshots/iphone-game.png" alt="A Sudoku game with notes in Quietly: Sudoku on iPhone" width="880" height="1912" decoding="async">
-          <figcaption><strong>iPhone</strong><span>iOS 18 or later</span></figcaption>
-        </figure>
+      <div class="device-carousel" aria-roledescription="carousel" aria-label="Quietly: Sudoku on each device" tabindex="0">
+        <div class="device-stage">
+          <button class="device-arrow device-previous" type="button" aria-label="Previous device">←</button>
+          <figure class="device iphone" data-device="iPhone">
+            <img src="assets/screenshots/iphone-game.png" alt="A Sudoku game with notes in Quietly: Sudoku on iPhone" width="880" height="1912" decoding="async">
+            <figcaption><strong>iPhone</strong><span>iOS 18 or later</span></figcaption>
+          </figure>
+          <figure class="device ipad" data-device="iPad" hidden>
+            <img src="assets/screenshots/ipad-game.png" alt="An Easy puzzle in Quietly: Sudoku on iPad with teal player entries" width="1102" height="1427" decoding="async">
+            <figcaption><strong>iPad</strong><span>iPadOS 18 or later</span></figcaption>
+          </figure>
+          <figure class="device mac" data-device="Mac" hidden>
+            <img src="assets/screenshots/mac-game.png" alt="Preview of a Sudoku game in Quietly: Sudoku for Mac" width="2360" height="1696" decoding="async">
+            <figcaption><strong>Mac <em class="soon-tag">Coming soon</em></strong><span>macOS 15 or later</span></figcaption>
+          </figure>
+          <button class="device-arrow device-next" type="button" aria-label="Next device">→</button>
+        </div>
+        <div class="device-dots" role="group" aria-label="Choose a device">
+          <button class="active" type="button" data-device-index="0" aria-label="Show iPhone" aria-current="true"></button>
+          <button type="button" data-device-index="1" aria-label="Show iPad" aria-current="false"></button>
+          <button type="button" data-device-index="2" aria-label="Show Mac" aria-current="false"></button>
+        </div>
       </div>
     </header>
 
